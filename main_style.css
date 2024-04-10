@@ -1,0 +1,350 @@
+
+*{
+    color:#1e3273;
+    font-family: 'Fira Sans Black';
+}
+
+@font-face{
+    font-family: 'Fira Sans Black';
+    src: url(fonts/Fira_Sans/FiraSans-Black.ttf);
+    font-weight: bolder;
+}
+
+@font-face{
+    font-family: 'Fira Sans Bold';
+    src: url(fonts/Fira_Sans/FiraSans-Bold.ttf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #16234C;
+    height: 100vh;
+    width: 100vw;
+}
+
+#canvasBackground{
+    position:fixed;
+    z-index: -1;
+    margin: 0;
+    border: 0;
+    top:-10px;
+    width: 100%;
+}
+
+.tabs{
+    margin: 0;
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Upgrades and uppgrade tabs */
+
+.anchorButton{
+    width: 100%;
+    top:20%;
+    left: -2vw;
+    position: absolute;
+}
+
+#uppgrades_tab{
+    width: 1200px;
+    height: 100%;
+    background-color: #5689ef;
+    margin-left: 98%;
+    position: absolute;
+    z-index: 900;
+    transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.4s;
+}
+
+.uppgrade_button{
+    position: absolute;
+    outline: None;
+    border: None;
+
+    background-color: #586ADB;
+
+    width: 3vw;
+    height: 55vh;
+
+    border-radius: 10px;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+#uppgrade_scrollable_menu{
+    list-style-type: none;
+    width: 50%;
+    max-height: 80%;
+    padding-top: 3%;
+    margin-left: 10%;
+    overflow-y: auto;
+    white-space: nowrap;
+    scrollbar-color: #574ccf #5689ef;
+    scrollbar-width: thin;
+}
+
+#uppgrades_tab h1{
+    color:#16234C;
+    font-family: 'Fira Sans Bold';
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    margin-right: 35%;
+}
+
+#uppgrade_scrollable_menu button{
+    margin: 5% 1% 1% 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color:#F4F1E9;
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+}
+
+.uppgrades_list button h2{
+    color:#5689ef;
+}
+
+#uppgrade_scrollable_menu button:hover{
+    background-color:#574ccf;
+}
+#uppgrade_scrollable_menu button:hover h2{
+    color:#F4F1E9;
+}
+
+/* Window clicker button */
+#window_background{
+    width: 550px;
+    height: 550px;
+    background-color: #5689ef;
+    position: absolute;
+
+    left: 650px;
+    top: 100px;
+
+    border-radius: 100%;
+    box-shadow: 10px 10px #586ADB;
+}
+
+#window_button{
+    display: flex;
+    position: absolute;
+
+    top: 225px;
+    left: 830px;
+
+    width: 200px;
+    height: 300px;
+
+    background-color: transparent;
+    border: transparent;
+
+    background-image: url("img/cem-ustundag-HeSVZo4g64M-unsplash.png");
+    background-size: cover; 
+
+    cursor: pointer;
+    animation-direction: reverse;
+    animation: window_button_hover_out 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+#window_button:hover{
+    animation-direction:normal;
+    animation: window_button_hover_in 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes window_button_hover_in{
+    from{
+        top: 225px;
+        left: 830px;
+    
+        width: 200px;
+        height: 300px;
+    }
+    to{
+        width: 220px;
+        height: 320px;
+
+        top: 240px;
+        left: 820px;
+    }
+}
+
+@keyframes window_button_hover_out{
+    to{
+        top: 225px;
+        left: 830px;
+    
+        width: 200px;
+        height: 300px;
+    }
+    from{
+        width: 220px;
+        height: 320px;
+        
+        top: 240px;
+        left: 820px;
+    }
+}
+
+#window_tab{
+    position: absolute;
+    top: 11%;
+}
+
+/* Tob nav bar */
+.top_tab{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-top: 10px;
+}
+
+.top_tab nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.main_menu_button{
+    display: block;
+    width: 200px;
+    height: 80px;
+    border: none;
+    margin-left: 10px;
+
+    background-color: #5689ef;
+    border-radius: 20px;
+    box-shadow: 5px 5px#586ADB;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.main_menu_button h2{
+    font-size: 35px;
+    margin: 0px;
+}
+
+.window_counter{
+    display: block;
+    width: 300px;
+    height: 100px;
+
+    margin-left: 29.5vw;
+    z-index: 1;
+
+    background-color: #5689ef;
+    border-radius: 50px;
+    box-shadow: 7px 7px#586ADB;
+}
+
+.window_counter h3{
+    margin: 0;
+    padding: 0; 
+    text-align: center;
+    
+    margin-top: 10px;
+    font-size: 25px;
+    font-family: 'Fira Sans Bold';
+}
+
+/* Main menu things */
+
+.main_menu{
+    display: none;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    background-color: #586ADB;
+    transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.4s;
+}
+
+#button_container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 30%;
+    top: 19%;
+}
+
+#button_container button{
+    margin: 5px 0px 5px 0px;
+    padding: 15px 80px 15px 80px;
+    background-color:#F4F1E9;
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#button_container button:hover{
+    background-color:#574ccf;   
+}
+
+#button_container button:hover h3{
+    color:#F4F1E9;
+}
+
+#button_container h3{
+    color: #586ADB;
+    font-size: 27px;
+    margin: 10px 0px 10px 0px;
+}
+
+#volume_options{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    color:#F4F1E9;
+}
+
+#volume_options h3{
+    color:#F4F1E9;
+    font-size: 27;
+    margin: 20px 20px 20px 0px;
+}
+
+#volume_options input{
+    left: 400px;
+    top:35%;
+    position: absolute;
+}
+
+.slider{
+    -webkit-appearance: none;
+    width: 400px;
+    border-radius: 10px;
+    background-color:#16234C;
+
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-color:#F4F1E9;
+    border: none;
+    cursor: pointer;
+}
+
+.slider::-moz-range-progress{
+    background-color:#F4F1E9;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
