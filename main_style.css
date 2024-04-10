@@ -122,36 +122,39 @@ body{
 
 /* Window clicker button */
 #window_background{
+    display:flex;
     width: 550px;
     height: 550px;
     background-color: #5689ef;
     position: absolute;
 
-    left: 650px;
-    top: 100px;
+    left: 50%;
+    top: 50%;
+    margin-top:-275px;
+    margin-left:-275px;
 
     border-radius: 100%;
-    box-shadow: 10px 10px #586ADB;
+    box-shadow: 4px 4px #586ADB;
+    text-align: center;
+    justify-content: center;
 }
 
 #window_button{
-    display: flex;
-    position: absolute;
-
-    top: 225px;
-    left: 830px;
-
     width: 200px;
     height: 300px;
 
     background-color: transparent;
     border: transparent;
 
+    margin:auto;
+
     background-image: url("img/cem-ustundag-HeSVZo4g64M-unsplash.png");
-    background-size: cover; 
+    background-size: cover;
 
     cursor: pointer;
     animation-direction: reverse;
+    transition: transform 0.2s ease;
+
     animation: window_button_hover_out 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
@@ -164,7 +167,7 @@ body{
     from{
         top: 225px;
         left: 830px;
-    
+
         width: 200px;
         height: 300px;
     }
@@ -181,14 +184,14 @@ body{
     to{
         top: 225px;
         left: 830px;
-    
+
         width: 200px;
         height: 300px;
     }
     from{
         width: 220px;
         height: 320px;
-        
+
         top: 240px;
         left: 820px;
     }
@@ -196,22 +199,19 @@ body{
 
 #window_tab{
     position: absolute;
-    top: 11%;
+    width: 100%;
+    height: 100%;
+    margin:auto;
 }
 
 /* Tob nav bar */
 .top_tab{
+    display:flex;
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
+    width:100%;
+    height:200px;
     padding-top: 10px;
-}
-
-.top_tab nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
+    align-items: center;
 }
 
 .main_menu_button{
@@ -219,11 +219,12 @@ body{
     width: 200px;
     height: 80px;
     border: none;
-    margin-left: 10px;
+
+    margin-left: 20px;
 
     background-color: #5689ef;
-    border-radius: 20px;
-    box-shadow: 5px 5px#586ADB;
+    border-radius: 50px;
+    box-shadow: 4px 4px #586ADB;
     cursor: pointer;
     z-index: 1000;
 }
@@ -238,19 +239,19 @@ body{
     width: 300px;
     height: 100px;
 
-    margin-left: 29.5vw;
     z-index: 1;
+    margin-left:36%;
 
     background-color: #5689ef;
     border-radius: 50px;
-    box-shadow: 7px 7px#586ADB;
+    box-shadow: 4px 4px #586ADB;
 }
 
 .window_counter h3{
     margin: 0;
-    padding: 0; 
+    padding: 0;
     text-align: center;
-    
+
     margin-top: 10px;
     font-size: 25px;
     font-family: 'Fira Sans Bold';
@@ -288,7 +289,7 @@ body{
 }
 
 #button_container button:hover{
-    background-color:#574ccf;   
+    background-color:#574ccf;
 }
 
 #button_container button:hover h3{
@@ -347,4 +348,3 @@ body{
     height: 100%;
     border-radius: 10px 0px 0px 10px;
 }
-

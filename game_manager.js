@@ -17,6 +17,10 @@ const uppgrade_tab = document.getElementById("uppgrades_tab")
 let x = 0;
 let x2 = 5846 - 442;
 
+function randomizeIntRange(min, max){
+    return Math.random() * (max - min) + min;
+}
+
 function animate(){
     ctx.clearRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx.drawImage(backgroundlayer1, x, 0);
@@ -26,7 +30,7 @@ function animate(){
     else x -= game_speed;
 
     if( x2 < -5846 - 442) x2 = 5846 + x - game_speed - 442;
-    else x2 -= game_speed;  
+    else x2 -= game_speed;
 
     requestAnimationFrame(animate);
 };
@@ -34,20 +38,23 @@ animate();
 
 // ------------------------------------------------------------------------------- //
 const windowCounter = document.getElementById("window_counter");
-var windows_collected = 0;   
+const window_icon = document.getElementById("window_button");
+var windows_collected = 0;
 
 // Counter for the total windows collected
 function add_windows(){
+    random_angle = randomizeIntRange(-20,20);
     windows_collected += 1;
+    window_icon.style.transform = "rotate(" + random_angle.toString() + "deg" + ")";
     windowCounter.innerHTML = windows_collected;
     setTimeout(() => {
-        
+      window_icon.style.transform = "rotate(0deg)";
     }, 500)
 };
 
 
 function open_main_menu(){
-    isMainMenuOpen = !isMainMenuOpen
+    isMainMenuOpen = !isMainMenuOpen;
 
     if (isMainMenuOpen){
         main_menu.style.display = "block";
@@ -69,7 +76,7 @@ function open_uppgrade_menu(){
 
     if (isUpgradeMenuOpen){
         if (current_margin <= 60){
-            
+
         }
         document.getElementById("uppgrades_tab").style.marginLeft = "60%";
     }
@@ -77,6 +84,3 @@ function open_uppgrade_menu(){
         document.getElementById("uppgrades_tab").style.marginLeft = "98%";
     }
 }
-
-
-

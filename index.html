@@ -24,7 +24,7 @@
 
     <div class="tabs">
         <div id="uppgrades_tab">
-            <h1>Uppgrades</h1>  
+            <h1>Uppgrades</h1>
             <div id="uppgrade_scrollable_menu">
                 <button id="uppgrade_button"><h2>0.4x Mouse Click | 50 windows</h2></button>
                 <button id="uppgrade_button"><h2>+1 Croatian Farmer | 100 windows</h2></button>
@@ -43,18 +43,15 @@
         </div>
 
         <div class="top_tab">
-            <nav>
-                <button id="main_menu_button" class="main_menu_button" onclick="open_main_menu()"><h2 id="menu_text">Menu</h2></button>
-                <div class="window_counter" id="notInMenu">
-                    <h3>Total windows:</h3>
-                    <h3 class="total_windows" id="window_counter">0</h3>
-                </div>
-            </nav>
+            <button id="main_menu_button" class="main_menu_button" onclick="open_main_menu()"><h2 id="menu_text">Menu</h2></button>
+            <div class="window_counter" id="notInMenu">
+                <h3>Total windows:</h3>
+                <h3 class="total_windows" id="window_counter">0</h3>
+            </div>
         </div>
 
         <div id="window_tab">
-            <div id="window_background"></div>
-            <button id="window_button" onclick="add_windows()"></button>
+            <div id="window_background"><button id="window_button" onclick="add_windows()"></button></div>
         </div>
     </div>
     <script src="game_manager.js"></script>
