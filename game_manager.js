@@ -1,8 +1,3 @@
-const canvas = document.getElementById("canvasBackground");
-const ctx = canvas.getContext("2d");
-const CANVAS_WIDTH = canvas.width = 1920;
-const CANVAS_HEIGHT = canvas.height = 1080;
-let game_speed = .5;
 
 const backgroundlayer1 = new Image();
 backgroundlayer1.src = 'Background.png';
@@ -21,21 +16,6 @@ function randomizeIntRange(min, max){
     return Math.random() * (max - min) + min;
 }
 
-function animate(){
-    ctx.clearRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
-    ctx.drawImage(backgroundlayer1, x, 0);
-    ctx.drawImage(backgroundlayer1, x2, 0);
-
-    if( x < -5846 - 442) x = 5846 + x2 - game_speed - 442;
-    else x -= game_speed;
-
-    if( x2 < -5846 - 442) x2 = 5846 + x - game_speed - 442;
-    else x2 -= game_speed;
-
-    requestAnimationFrame(animate);
-};
-animate();
-
 // ------------------------------------------------------------------------------- //
 const windowCounter = document.getElementById("window_counter");
 const window_icon = document.getElementById("window_button");
@@ -43,7 +23,7 @@ var windows_collected = 0;
 
 // Counter for the total windows collected
 function add_windows(){
-    random_angle = randomizeIntRange(-20,20);
+    random_angle = randomizeIntRange(-45,45);
     windows_collected += 1;
     window_icon.style.transform = "rotate(" + random_angle.toString() + "deg" + ")";
     windowCounter.innerHTML = windows_collected;

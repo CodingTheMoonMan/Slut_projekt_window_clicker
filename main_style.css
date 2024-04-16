@@ -1,6 +1,6 @@
 
 *{
-    color:#1e3273;
+    /* color:#1e3273; */
     font-family: 'Fira Sans Black';
 }
 
@@ -19,18 +19,29 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #16234C;
+    background-color: #1F2633;
     height: 100vh;
     width: 100vw;
 }
 
 #canvasBackground{
-    position:fixed;
-    z-index: -1;
-    margin: 0;
-    border: 0;
-    top:-10px;
+    position:absolute;
+    background-image: url("DioPattern.png");
     width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: 15%;
+    opacity: 0.10;
+    animation: pan 20s linear infinite;
+}
+
+@keyframes pan{
+    0%{
+        background-position: 0% 0%;
+    }
+    100%{
+        background-position: 100% 0%;
+    }
 }
 
 .tabs{
@@ -153,7 +164,7 @@ body{
 
     cursor: pointer;
     animation-direction: reverse;
-    transition: transform 0.2s ease;
+    transition: transform 0.9s ease-in-out;
 
     animation: window_button_hover_out 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
