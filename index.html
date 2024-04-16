@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="main_style.css">
 </head>
 <body>
-    <div id="canvasBackground"></div>
+    <div id="background_container">
+        <div id="stripe_background"></div>
+        <div id="background_gradient"></div>
+    </div>
+
 
     <div class="main_menu" id="main_menu">
         <div id="button_container">
@@ -38,16 +42,15 @@
                 <button id="uppgrade_button"><h2>+1 Croatian Tractor | 400 windows</h2></button>
             </div>
             <div class="anchorButton">
-                <button class="uppgrade_button" onclick="open_uppgrade_menu()"></button>
+                <button id="open_uppgrade_button" onclick="open_uppgrade_menu()"></button>
             </div>
         </div>
 
         <div class="top_tab">
-            <button id="main_menu_button" class="main_menu_button" onclick="open_main_menu()"><h2 id="menu_text">Menu</h2></button>
-            <div class="window_counter" id="notInMenu">
-                <h3>Total windows:</h3>
-                <h3 class="total_windows" id="window_counter">0</h3>
-            </div>
+            <button id="main_menu_button" class="main_menu_button" onclick="open_main_menu()">
+                <img src="HomeIcon.svg">
+            </button>
+            <div class="window_counter"> <h3>Windows:</h3> <h3 class="total_windows" id="window_counter">0</h3></div>
         </div>
 
         <div id="window_tab">

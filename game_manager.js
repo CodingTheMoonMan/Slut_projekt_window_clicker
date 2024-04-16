@@ -19,6 +19,7 @@ function randomizeIntRange(min, max){
 // ------------------------------------------------------------------------------- //
 const windowCounter = document.getElementById("window_counter");
 const window_icon = document.getElementById("window_button");
+const upgrades_menu = document.getElementById("uppgrades_tab");
 var windows_collected = 0;
 
 // Counter for the total windows collected
@@ -51,6 +52,7 @@ function open_main_menu(){
 var current_margin = 0;
 
 function open_uppgrade_menu(){
+
     isUpgradeMenuOpen = !isUpgradeMenuOpen
 
 
@@ -58,9 +60,16 @@ function open_uppgrade_menu(){
         if (current_margin <= 60){
 
         }
-        document.getElementById("uppgrades_tab").style.marginLeft = "60%";
+        upgrades_menu.style.marginLeft = "75%";
+        upgrades_menu.style.height = "70rem";
+        upgrades_menu.style.marginTop = "-35rem"
+        document.getElementById("open_uppgrade_button").style.transform = "rotate(180deg)"
     }
     else{
-        document.getElementById("uppgrades_tab").style.marginLeft = "98%";
+        upgrades_menu.style.marginLeft = "98%";
+        upgrades_menu.style.height = "15rem";
+        upgrades_menu.style.top = "50%"
+        upgrades_menu.style.marginTop = "-7.5rem"
+        document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg)"
     }
 }

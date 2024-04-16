@@ -24,7 +24,19 @@ body{
     width: 100vw;
 }
 
-#canvasBackground{
+#background_container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#background_gradient{
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0), rgba(31, 38, 51, 1));
+}
+
+#stripe_background{
     position:absolute;
     background-image: url("DioPattern.png");
     width: 100%;
@@ -32,7 +44,7 @@ body{
     z-index: -1;
     background-size: 15%;
     opacity: 0.10;
-    animation: pan 20s linear infinite;
+    animation: pan 70s linear infinite;
 }
 
 @keyframes pan{
@@ -57,46 +69,59 @@ body{
 
 .anchorButton{
     width: 100%;
-    top:20%;
-    left: -2vw;
+    top: 50%;
+    left: -6rem;
+    margin-top: -2.5rem;
     position: absolute;
 }
 
 #uppgrades_tab{
-    width: 1200px;
-    height: 100%;
-    background-color: #5689ef;
-    margin-left: 98%;
     position: absolute;
+    width: 40rem;
+    height: 15rem;
+
+    top: 50%;
+    margin-top: -7.5rem;
+    margin-left: 98%;
+
+    background-color: rgba(133, 62, 193, 1);
+    border-radius: 5px;
+    outline: solid 5px rgba(133, 62, 193, 1);
+    outline-offset: 0.5rem;
+
     z-index: 900;
-    transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.4s;
+    transition: all 500ms ease-in-out;
 }
 
-.uppgrade_button{
+#open_uppgrade_button{
     position: absolute;
     outline: None;
     border: None;
 
-    background-color: #586ADB;
+    background-color: transparent;
+    background-image: url("arrowIcon.svg") ;
+    background-size: 4rem;
+    background-repeat: no-repeat;
 
-    width: 3vw;
-    height: 55vh;
+    width: 5rem;
+    height: 5rem;
 
-    border-radius: 10px;
     transform-origin: center;
     cursor: pointer;
+    transition: transform 500ms ease-in-out;
 }
 
 #uppgrade_scrollable_menu{
     list-style-type: none;
-    width: 50%;
+    width: 100%;
     max-height: 80%;
     padding-top: 3%;
-    margin-left: 10%;
     overflow-y: auto;
     white-space: nowrap;
     scrollbar-color: #574ccf #5689ef;
     scrollbar-width: thin;
+    text-align: center;
+    align-items: center;
 }
 
 #uppgrades_tab h1{
@@ -105,7 +130,6 @@ body{
     font-size: 30px;
     text-align: center;
     display: block;
-    margin-right: 35%;
 }
 
 #uppgrade_scrollable_menu button{
@@ -133,21 +157,22 @@ body{
 
 /* Window clicker button */
 #window_background{
+    position:absolute;
     display:flex;
-    width: 550px;
-    height: 550px;
-    background-color: #5689ef;
-    position: absolute;
+    width: 30rem;
+    height: 30rem;
+    background-color: rgba(133, 62, 193, 1);
 
     left: 50%;
     top: 50%;
-    margin-top:-275px;
-    margin-left:-275px;
+    margin-top:-15rem;
+    margin-left:-15rem;
 
-    border-radius: 100%;
-    box-shadow: 4px 4px #586ADB;
-    text-align: center;
+    border-radius: 5px;
     justify-content: center;
+
+    outline: solid 3px rgba(133, 62, 193, 1);
+    outline-offset: 0.3rem;
 }
 
 #window_button{
@@ -217,51 +242,53 @@ body{
 
 /* Tob nav bar */
 .top_tab{
-    display:flex;
+    display: flex;
     position: absolute;
     width:100%;
     height:200px;
     padding-top: 10px;
-    align-items: center;
+    justify-content: center;
 }
 
 .main_menu_button{
-    display: block;
-    width: 200px;
-    height: 80px;
+    position:relative;
+    display:block;
+    width: 5rem;
+    height: 5rem;
     border: none;
 
-    margin-left: 20px;
+    margin-right: 95%;
 
-    background-color: #5689ef;
-    border-radius: 50px;
-    box-shadow: 4px 4px #586ADB;
+    background-color: rgba(137, 65, 197, 1);
+    border-radius: 5px;
     cursor: pointer;
     z-index: 1000;
 }
 
-.main_menu_button h2{
-    font-size: 35px;
-    margin: 0px;
+.main_menu_button img{
+    width: 4rem;
 }
 
 .window_counter{
+    position: absolute;
     display: block;
-    width: 300px;
-    height: 100px;
+    width: 270px;
+    height: 90px;
 
     z-index: 1;
-    margin-left:36%;
 
-    background-color: #5689ef;
-    border-radius: 50px;
-    box-shadow: 4px 4px #586ADB;
+    background-color: rgba(133, 62, 193, 1);
+    border-radius: 5px;
+
+    outline: 3px solid rgba(133, 62, 193, 1);
+    outline-offset: 0.3rem;
 }
 
 .window_counter h3{
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #e6d8f2;
 
     margin-top: 10px;
     font-size: 25px;
@@ -277,7 +304,7 @@ body{
     width: 100%;
     position: absolute;
 
-    background-color: #586ADB;
+    background-color: rgba(137, 65, 197, 1);
     transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.4s;
 }
 
