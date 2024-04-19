@@ -33,7 +33,7 @@ body{
 #background_gradient{
     height: 100%;
     width: 100%;
-    background-image: radial-gradient(rgba(255, 255, 255, 0), rgba(31, 38, 51, 1));
+    background-image: radial-gradient( rgba(255, 255, 255, 0), rgba(31, 38, 51, 1));
 }
 
 #stripe_background{
@@ -67,30 +67,27 @@ body{
 
 /* Upgrades and uppgrade tabs */
 
-.anchorButton{
-    width: 100%;
-    top: 50%;
-    left: -6rem;
-    margin-top: -2.5rem;
+#upgrade_container{
     position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-#uppgrades_tab{
+#upgrades_tab{
     position: absolute;
-    width: 40rem;
+    width: 30rem;
     height: 15rem;
-
+    transform:translateY(-50%);
     top: 50%;
-    margin-top: -7.5rem;
-    margin-left: 98%;
+    left: 96%;
 
     background-color: rgba(133, 62, 193, 1);
     border-radius: 5px;
-    outline: solid 5px rgba(133, 62, 193, 1);
-    outline-offset: 0.5rem;
+    outline: solid 4px rgba(133, 62, 193, 1);
+    outline-offset: 0.4rem;
 
     z-index: 900;
-    transition: all 500ms ease-in-out;
+    transition: all 400ms ease-in-out;
 }
 
 #open_uppgrade_button{
@@ -106,25 +103,28 @@ body{
     width: 5rem;
     height: 5rem;
 
-    transform-origin: center;
+    transform: translateY(-50%);
+    left: -20%;
+    top: 50%;
+
     cursor: pointer;
-    transition: transform 500ms ease-in-out;
+    transition: transform 300ms ease-in-out;
 }
 
 #uppgrade_scrollable_menu{
-    list-style-type: none;
     width: 100%;
     max-height: 80%;
-    padding-top: 3%;
     overflow-y: auto;
+    overflow-x: hidden;
     white-space: nowrap;
-    scrollbar-color: #574ccf #5689ef;
+    scrollbar-color: #1F2633 rgba(133, 62, 193, 1);
     scrollbar-width: thin;
     text-align: center;
     align-items: center;
+    transition: transform 500ms ease-in-out;
 }
 
-#uppgrades_tab h1{
+#upgrades_tab h1{
     color:#16234C;
     font-family: 'Fira Sans Bold';
     font-size: 30px;
@@ -133,15 +133,24 @@ body{
 }
 
 #uppgrade_scrollable_menu button{
-    margin: 5% 1% 1% 20%;
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color:#F4F1E9;
+    margin-left: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    padding: 5%;
+
+    background-color:#e6d8f2;
     border: 0;
     outline: 0;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
-    display: block;
+    display: block ;
+    transition: transform 500ms ease-in-out;
+    outline: solid 4px #e6d8f2;
+    outline-offset: 0.2rem;
 }
 
 .uppgrades_list button h2{
@@ -153,6 +162,15 @@ body{
 }
 #uppgrade_scrollable_menu button:hover h2{
     color:#F4F1E9;
+}
+
+@keyframes open_upgrades_menu{
+    0%{
+       
+    }
+    100%{
+
+    }
 }
 
 /* Window clicker button */

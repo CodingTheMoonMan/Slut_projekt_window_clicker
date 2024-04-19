@@ -7,7 +7,6 @@ var isMainMenuOpen = false;
 var isUpgradeMenuOpen = false;
 
 const main_button_color = document.getElementById("main_menu_button").style.backgroundColor;
-const uppgrade_tab = document.getElementById("uppgrades_tab")
 
 let x = 0;
 let x2 = 5846 - 442;
@@ -19,7 +18,7 @@ function randomizeIntRange(min, max){
 // ------------------------------------------------------------------------------- //
 const windowCounter = document.getElementById("window_counter");
 const window_icon = document.getElementById("window_button");
-const upgrades_menu = document.getElementById("uppgrades_tab");
+const upgrades_menu = document.getElementById("upgrades_tab");
 var windows_collected = 0;
 
 // Counter for the total windows collected
@@ -57,19 +56,15 @@ function open_uppgrade_menu(){
 
 
     if (isUpgradeMenuOpen){
-        if (current_margin <= 60){
-
-        }
-        upgrades_menu.style.marginLeft = "75%";
-        upgrades_menu.style.height = "70rem";
-        upgrades_menu.style.marginTop = "-35rem"
-        document.getElementById("open_uppgrade_button").style.transform = "rotate(180deg)"
+        upgrades_menu.style.transform = "translateX(-90%) translateY(-50%)"
+        upgrades_menu.style.height = "90%"
+        document.getElementById("uppgrade_scrollable_menu").style.display = "block";       
+        document.getElementById("open_uppgrade_button").style.transform = "translateY(-50%) rotate(180deg)"
     }
     else{
-        upgrades_menu.style.marginLeft = "98%";
-        upgrades_menu.style.height = "15rem";
-        upgrades_menu.style.top = "50%"
-        upgrades_menu.style.marginTop = "-7.5rem"
-        document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg)"
+        upgrades_menu.style.transform = "translateX(0%) translateY(-50%)"
+        upgrades_menu.style.height = "15rem"
+        document.getElementById("uppgrade_scrollable_menu").style.display = "none";   
+        document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg) translateY(-50%)"
     }
 }
