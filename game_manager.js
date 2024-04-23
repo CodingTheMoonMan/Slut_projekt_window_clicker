@@ -10,26 +10,27 @@ const main_button_color = document.getElementById("main_menu_button").style.back
 
 let x = 0;
 let x2 = 5846 - 442;
+let window_add_amount = 1
 
 function randomizeIntRange(min, max){
     return Math.random() * (max - min) + min;
 }
 
 // ------------------------------------------------------------------------------- //
-const windowCounter = document.getElementById("window_counter");
 const window_icon = document.getElementById("window_button");
 const upgrades_menu = document.getElementById("upgrades_tab");
 var windows_collected = 0;
 
+function window_counter_update(amount){
+    document.getElementById("window_counter").innerHTML = Math.round(amount);
+}
+
 // Counter for the total windows collected
 function add_windows(){
     random_angle = randomizeIntRange(-45,45);
-    windows_collected += 1;
-    window_icon.style.transform = "rotate(" + random_angle.toString() + "deg" + ")";
-    windowCounter.innerHTML = windows_collected;
-    setTimeout(() => {
-      window_icon.style.transform = "rotate(0deg)";
-    }, 500)
+    windows_collected += window_add_amount;
+    window_counter_update(windows_collected)
+    
 };
 
 
@@ -39,12 +40,12 @@ function open_main_menu(){
     if (isMainMenuOpen){
         main_menu.style.display = "block";
         document.getElementById("main_menu_button").style.backgroundColor = "#F4F1E9"
-        document.getElementById("menu_text").style.color = "#586ADB"
+        document.getElementById("background_effect").style.display = "block";
     }
     else{
         main_menu.style.display = "none";
         document.getElementById("main_menu_button").style.backgroundColor = main_button_color
-        document.getElementById("menu_text").style.color = "#16234C"
+        document.getElementById("background_effect").style.display = "none";
     }
 }
 
@@ -66,5 +67,16 @@ function open_uppgrade_menu(){
         upgrades_menu.style.height = "15rem"
         document.getElementById("uppgrade_scrollable_menu").style.display = "none";   
         document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg) translateY(-50%)"
+    }
+}
+
+function uppgrade_mouse_click(){
+    mouse_price = document.getElementById("mouse_price")
+    if (windows_collected >= parseInt(mouse_price.innerHTML)){
+        window_add_amount = window_add_amount * 1.4
+        windows_collected -= parseInt(mouse_price.innerHTML)
+        window_counter_update(windows_collected)
+        mouse_price.innerHTML = parseInt(mouse_price.innerHTML * 1.5)
+        
     }
 }
