@@ -17,6 +17,11 @@ h2{
     src: url(fonts/Fira_Sans/FiraSans-Bold.ttf);
 }
 
+@font-face{
+    font-family: 'Fira Sans Regular';
+    src: url(fonts/Fira_Sans/FiraSans-Regular.ttf);
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -153,10 +158,17 @@ body{
     transition: transform 500ms ease-in-out;
     outline: solid 4px #e6d8f2;
     outline-offset: 0.2rem;
+    font-family: 'Fira Sans Regular'; 
+}
+
+#uppgrade_scrollable_menu h2{
+    font-family: 'Fira Sans Regular';
 }
 
 #uppgrade_scrollable_menu button:hover{
-    background-color:#574ccf;
+    background-color:#1F2633;
+    outline: solid 4px #1F2633;
+    outline-offset: 0.2rem;
 }
 #uppgrade_scrollable_menu button:hover h2{
     color:#F4F1E9;

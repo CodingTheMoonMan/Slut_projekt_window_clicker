@@ -8,6 +8,8 @@ var isUpgradeMenuOpen = false;
 
 const main_button_color = document.getElementById("main_menu_button").style.backgroundColor;
 
+const DELAY = 1000;
+
 let x = 0;
 let x2 = 5846 - 442;
 let window_add_amount = 1
@@ -79,4 +81,9 @@ function uppgrade_mouse_click(){
         mouse_price.innerHTML = parseInt(mouse_price.innerHTML * 1.5)
         
     }
+}
+
+function hover_on_sound(soundObj){
+    var sound = document.getElementById(soundObj);
+    sound.play();
 }
