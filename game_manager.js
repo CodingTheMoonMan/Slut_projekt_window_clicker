@@ -74,6 +74,7 @@ function open_uppgrade_menu(){
 
 function uppgrade_mouse_click(){
     mouse_price = document.getElementById("mouse_price")
+    console.log(document.getElementById("uppgrade_button").innerText.split("|"))
     if (windows_collected >= parseInt(mouse_price.innerHTML)){
         window_add_amount = window_add_amount * 1.4
         windows_collected -= parseInt(mouse_price.innerHTML)
@@ -86,4 +87,8 @@ function uppgrade_mouse_click(){
 function hover_on_sound(soundObj){
     var sound = document.getElementById(soundObj);
     sound.play();
+}
+
+function auto_click_upgrade(obj, text){
+
 }

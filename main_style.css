@@ -158,20 +158,18 @@ body{
     transition: transform 500ms ease-in-out;
     outline: solid 4px #e6d8f2;
     outline-offset: 0.2rem;
-    font-family: 'Fira Sans Regular'; 
-}
-
-#uppgrade_scrollable_menu h2{
+    
+    color:#1F2633;
     font-family: 'Fira Sans Regular';
+    font-size: 20px;
+    font-weight:bold;
 }
 
 #uppgrade_scrollable_menu button:hover{
     background-color:#1F2633;
     outline: solid 4px #1F2633;
     outline-offset: 0.2rem;
-}
-#uppgrade_scrollable_menu button:hover h2{
-    color:#F4F1E9;
+    color: #F4F1E9;
 }
 
 /* Window clicker button */
