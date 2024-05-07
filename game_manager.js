@@ -24,7 +24,7 @@ const upgrades_menu = document.getElementById("upgrades_tab");
 var windows_collected = 0;
 
 function window_counter_update(amount){
-    document.getElementById("window_counter").innerHTML = Math.round(amount);
+    document.getElementById("window_counter").innerHTML = Math.trunc(amount);
 }
 
 // Counter for the total windows collected
@@ -73,14 +73,13 @@ function open_uppgrade_menu(){
 }
 
 function uppgrade_mouse_click(){
-    mouse_price = document.getElementById("mouse_price")
-    console.log(document.getElementById("uppgrade_button").innerText.split("|"))
-    if (windows_collected >= parseInt(mouse_price.innerHTML)){
+    mouse_price = document.getElementById("mouse_upgrade").innerText.split("|")[1];
+    if (windows_collected >= parseInt(mouse_price)){
         window_add_amount = window_add_amount * 1.4
-        windows_collected -= parseInt(mouse_price.innerHTML)
+        windows_collected -= parseInt(mouse_price)
         window_counter_update(windows_collected)
-        mouse_price.innerHTML = parseInt(mouse_price.innerHTML * 1.5)
-        
+        mouse_price = parseInt(mouse_price * 1.5)
+        document.getElementById("mouse_upgrade").innerText = ("1.4x Mouse Click | " + String(mouse_price) + " | windows");
     }
 }
 

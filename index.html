@@ -32,14 +32,14 @@
             <div id="upgrades_tab">
                 <h1>Uppgrades</h1>
                 <div id="uppgrade_scrollable_menu">
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')" onclick="uppgrade_mouse_click()">1.4x Mouse Click | 50 |windows</button>
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')"> +1 Croatian Farmer | 100 | windows </button>
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')"> +1 Croatian Farming Tools | 400 | windows</button>
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 800 | windows</button>
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
-                    <button id="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" id="mouse_upgrade" onmouseenter="hover_on_sound('select_sound')" onclick="uppgrade_mouse_click()">1.4x Mouse Click | 50 | windows</button>
+                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')"> +1 Croatian Farmer | 100 | windows </button>
+                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')"> +1 Croatian Farming Tools | 400 | windows</button>
+                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 800 | windows</button>
+                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
                 </div>
                 <button id="open_uppgrade_button" onclick="open_uppgrade_menu()"></button>
             </div>
@@ -49,10 +49,10 @@
             <button id="main_menu_button" class="main_menu_button" onclick="open_main_menu()">
                 <img src="HomeIcon.svg">
             </button>
-            <div class="window_counter"> <h3>Windows:</h3> <h3 class="total_windows" id="window_counter">0</h3></div>
         </div>
 
         <div id="window_tab">
+            <div class="window_counter"> <h3>Windows:</h3> <h3 class="total_windows" id="window_counter">0</h3></div>
             <div id="window_background"><button id="window_button" onclick="add_windows()"></button></div>
         </div>
     </div>
