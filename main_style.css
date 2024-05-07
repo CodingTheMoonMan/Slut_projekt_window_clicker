@@ -5,7 +5,7 @@ h2{
     margin-right: 1%;
 }
 
-
+/* Declarerar fonts så jag kan använda det senare(Inte fönster skatt(Är en skattefuskare) */
 @font-face{
     font-family: 'Fira Sans Black';
     src: url(fonts/Fira_Sans/FiraSans-Black.ttf);
@@ -20,6 +20,16 @@ h2{
 @font-face{
     font-family: 'Fira Sans Regular';
     src: url(fonts/Fira_Sans/FiraSans-Regular.ttf);
+}
+/* -------------------------------------------------------------------- */
+
+#particlesCanvas{
+    /* Använder html canvas för att skapa effecter  */
+    display: block;
+    position:absolute;
+    z-index: 5;
+    pointer-events: none;
+    object-fit: contain;
 }
 
 body{
@@ -418,7 +428,7 @@ body{
     height: 25px;
     background-color:#F4F1E9;
     border: none;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .slider::-moz-range-progress{
