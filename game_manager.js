@@ -14,19 +14,10 @@ let x = 0;
 let x2 = 5846 - 442;
 let window_add_amount = 1
 
-function randomizeIntRange(min, max){
-    return Math.random() * (max - min) + min;
-}
-
 // ------------------------------------------------------------------------------- //
 const window_icon = document.getElementById("window_button");
 const upgrades_menu = document.getElementById("upgrades_tab");
 var windows_collected = 0;
-
-const canvas = document.getElementById("particlesCanvas");
-canvas.style.zIndex = "5";
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 
 function window_counter_update(amount){
     document.getElementById("window_counter").innerHTML = Math.trunc(amount);
@@ -34,7 +25,6 @@ function window_counter_update(amount){
 
 // Counter for the total windows collected
 function add_windows(){
-    random_angle = randomizeIntRange(-45,45);
     windows_collected += window_add_amount;
     window_counter_update(windows_collected);
     
@@ -95,24 +85,3 @@ function hover_on_sound(soundObj){
 function auto_click_upgrade(obj, text){
 
 }
-
-function spawnParticle(){
-    const canvas = document.getElementById("particlesCanvas");
-    const windowButton = document.getElementById("window_button");
-    const ctx = canvas.getContext("2d");
-
-    ctx.rect(windowButton.transform, 200, 50,50);
-    ctx.fillStyle = "red";
-    ctx.fill();
-}
-
-// document.addEventListener("mousedown", function(event){
-//     if(event.button = 1){
-        
-//     }
-// })
-
-
-
-spawnParticle()
-
