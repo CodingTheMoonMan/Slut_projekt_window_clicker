@@ -19,6 +19,16 @@ window.addEventListener("resize", function(){
       particle.animate();
 })
 
+const mouse = {
+      x: 0,
+      y: 0,
+}
+
+window.addEventListener("mousemove", function(e){
+      mouse.x = e.x;
+      mouse.y = e.y;
+})
+
 
 class ParticleExplosion{
       #width
@@ -30,23 +40,18 @@ class ParticleExplosion{
             this.#height = height;
             this.#ctx.fillStyle = "darkgoldenrod";
             this.#width = width;
-            this.x = 0;
-            this.y = 0;
             console.log("Effect loaded");
       }
 
       #draw(x,y){
-            const size = 70;
+            const size = 40;
             this.#ctx.beginPath();
-            this.#ctx.moveTo(x,y);
-            this.#ctx.fillRect(x - (size/2) , y - (size/2), size, size);
+            this.#ctx.fillRect(mouse.x - (size/2) , mouse.y - (size/2), size, size);
       }
       
       animate(){
             this.#ctx.clearRect(0,0,this.#width,this.#height);
-            this.#draw(this.#width /2 + this.x, this.#height/2 + this.y);
-            this.x += 4;
-            this.y += 2;
+            this.#draw(this.#width /2, this.#height/2);
             requestAnimationFrame(this.animate.bind(this));
       }
 }
