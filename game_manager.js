@@ -15,9 +15,24 @@ let x2 = 5846 - 442;
 let window_add_amount = 1
 
 // ------------------------------------------------------------------------------- //
-const window_icon = document.getElementById("window_button");
-const upgrades_menu = document.getElementById("upgrades_tab");
+let window_icon = document.getElementById("window_button");
+let window_backgrnd = document.getElementById("window_background");
+let upgrades_menu = document.getElementById("upgrades_tab");
 var windows_collected = 0;
+
+function window_bttn_repos(){
+    let w_icon_prop = window_icon.getBoundingClientRect();
+    let w_backgrnd_prop = window_backgrnd.getBoundingClientRect();
+
+    let offset_x = 0
+    let offset_y = 0
+
+    offset_x = (w_backgrnd_prop.left + (w_backgrnd_prop.width/2));
+    offset_y = (w_backgrnd_prop.top + (w_backgrnd_prop.height/2));
+
+    window_icon.style.left = offset_x+"px";
+    window_icon.style.top = offset_y+"px";
+}
 
 function window_counter_update(amount){
     document.getElementById("window_counter").innerHTML = Math.trunc(amount);
@@ -85,3 +100,11 @@ function hover_on_sound(soundObj){
 function auto_click_upgrade(obj, text){
 
 }
+
+window.addEventListener("load",function(e){
+    window_bttn_repos();
+})
+
+window.addEventListener("resize", function(e){
+    window_bttn_repos();
+})

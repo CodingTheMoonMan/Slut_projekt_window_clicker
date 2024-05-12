@@ -204,72 +204,33 @@ body{
     outline-offset: 0.3rem;
 }
 
+/* Det här är huvudknappen som lägger till windows in i din plånbok */
 #window_button{
+    position: absolute;
     width: 200px;
     height: 300px;
+
+    z-index: 6; 
 
     background-color: transparent;
     border: transparent;
 
-    margin:auto;
+    margin: 0;
+    padding: 0;
 
     background-image: url("img/cem-ustundag-HeSVZo4g64M-unsplash.png");
     background-size: cover;
 
     cursor: pointer;
-    animation-direction: reverse;
-    transition: transform 0.9s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
-    animation: window_button_hover_out 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 #window_button:hover{
-    animation-direction:normal;
-    animation: window_button_hover_in 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+
+    transform: scale(1.3);
 }
 
-@keyframes window_button_hover_in{
-    from{
-        top: 225px;
-        left: 830px;
-
-        width: 200px;
-        height: 300px;
-    }
-    to{
-        width: 220px;
-        height: 320px;
-
-        top: 240px;
-        left: 820px;
-    }
-}
-
-@keyframes window_button_hover_out{
-    to{
-        top: 225px;
-        left: 830px;
-
-        width: 200px;
-        height: 300px;
-    }
-    from{
-        width: 220px;
-        height: 320px;
-
-        top: 240px;
-        left: 820px;
-    }
-}
-
-#window_tab{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin:auto;
-}
 
 /* Tob nav bar */
 .top_tab{

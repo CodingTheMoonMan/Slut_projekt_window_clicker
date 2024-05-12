@@ -1,22 +1,22 @@
 let canvas;
 let ctx;
 let particle;
+
+let colors = ["#632aa3","#9143c4","#b959d9"];
+
+let windowbttn = document.getElementById("window_button");
+
 window.onload = function(){
       canvas = document.getElementById("particlesCanvas");
       ctx = canvas.getContext("2d");
 
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-
-      particle = new ParticleExplosion(ctx, canvas.width, canvas.height);
-      particle.animate();
 }
 
 window.addEventListener("resize", function(){
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      particle = new ParticleExplosion(ctx, canvas.width, canvas.height);
-      particle.animate();
 })
 
 const mouse = {
@@ -30,28 +30,73 @@ window.addEventListener("mousemove", function(e){
 })
 
 
-class ParticleExplosion{
-      #width
-      #height
+class Rectangle{
       #ctx
 
-      constructor (ctx, width, height){
+      constructor (ctx, xPos, yPos, color, size, speedX, speedY){
             this.#ctx = ctx;
-            this.#height = height;
-            this.#ctx.fillStyle = "darkgoldenrod";
-            this.#width = width;
-            console.log("Effect loaded");
+            this.color = color;
+            this.speedX = speedX;
+            this.speedY = speedY;
+            this.size = size;
+            this.xPos = xPos;
+            this.yPos = yPos;
+
+            this.dx = 1 * this.speedX;
+            this.dy = 1 * this.speedY;
       }
 
-      #draw(x,y){
-            const size = 40;
+      draw(){
             this.#ctx.beginPath();
-            this.#ctx.fillRect(mouse.x - (size/2) , mouse.y - (size/2), size, size);
+            this.#ctx.fillStyle = this.color;
+            this.#ctx.fillRect(this.xPos - (this.size/2) , this.yPos - (this.size/2), this.size, this.size);
+            this.#ctx.closePath();
       }
       
-      animate(){
-            this.#ctx.clearRect(0,0,this.#width,this.#height);
-            this.#draw(this.#width /2, this.#height/2);
-            requestAnimationFrame(this.animate.bind(this));
+      update(){
+            this.draw();
+            
+            if(this.xPos > canvas.width || this.xPos < 0 || this.yPos > canvas.height || this.yPos < 0){
+                  this.#ctx.clearRect(this.xPos,this.yPos,this.size,this.size)
+            }
+
+            this.xPos += this.dx
+            this.yPos += this.dy
+      }
+
+}
+
+
+let particles = [];
+
+function explosionEffect(){
+      for (let i = 0; i < 20; i++){
+            let randomColor = colors[Math.floor(Math.random() * colors.length)] 
+            let size = Math.random() * 20 + 5;
+            let speedX = Math.random() * 3 - 1.5;
+            let speedY = Math.random() * 3 - 1.5;
+            let rects  = new Rectangle(ctx, mouse.x, mouse.y, randomColor, size, speedX, speedY);
+            particles.push(rects);
+      }
+      setTimeout(function(){
+            for (let i = 0; i < particles.length;i++){
+                  particles[i].clearRect(this.xPos,this.yPos,this.size,this.size);
+            }
+      }, 2000)
+}
+
+windowbttn.addEventListener("click", function(e){
+      explosionEffect();
+})
+
+function animation(){
+      requestAnimationFrame(animation);
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let i = 0; i < particles.length; i++){
+            particles[i].update();
       }
 }
+
+
+
+animation();
