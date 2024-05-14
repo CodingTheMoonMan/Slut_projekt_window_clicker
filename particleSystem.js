@@ -53,17 +53,20 @@ class Rectangle{
             this.#ctx.closePath();
       }
       
-      update(){
+      update(clear){
             this.draw();
             
             if(this.xPos > canvas.width || this.xPos < 0 || this.yPos > canvas.height || this.yPos < 0){
                   this.#ctx.clearRect(this.xPos,this.yPos,this.size,this.size)
             }
 
+            if(clear){
+                  this.#ctx.clearRect(this.xPos,this.yPos,this.size,this.size);
+            }
+
             this.xPos += this.dx
             this.yPos += this.dy
       }
-
 }
 
 
@@ -78,11 +81,6 @@ function explosionEffect(){
             let rects  = new Rectangle(ctx, mouse.x, mouse.y, randomColor, size, speedX, speedY);
             particles.push(rects);
       }
-      setTimeout(function(){
-            for (let i = 0; i < particles.length;i++){
-                  particles[i].clearRect(this.xPos,this.yPos,this.size,this.size);
-            }
-      }, 2000)
 }
 
 windowbttn.addEventListener("click", function(e){
@@ -93,10 +91,16 @@ function animation(){
       requestAnimationFrame(animation);
       ctx.clearRect(0,0,canvas.width,canvas.height);
       for(let i = 0; i < particles.length; i++){
-            particles[i].update();
+            particles[i].update(false);
       }
 }
 
 
 
 animation();
+
+setTimeout(function(){
+      for (let i = 0; i<particles.length;i++){
+            ctx.clearRect(particles[i].xPos, particles[i].yPos, particles[i].size,particles[i].size);
+      }
+}, 200)

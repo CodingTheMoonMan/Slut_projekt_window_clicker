@@ -210,7 +210,8 @@ body{
     width: 200px;
     height: 300px;
 
-    z-index: 6; 
+    z-index: 6;
+    margin: auto; 
 
     background-color: transparent;
     border: transparent;
@@ -365,7 +366,7 @@ body{
 
 #volume_options h3{
     color:#F4F1E9;
-    font-size: 27;
+    font-size: 27px;
 }
 
 #volume_options input{
@@ -402,4 +403,23 @@ body{
     background-color:#F4F1E9;
     height: 100%;
     border-radius: 10px 0px 0px 10px;
+}
+
+/* Mobile styles */
+
+@media only screen and (max-width: 600px) {
+    #window_background{
+        width: 20rem;
+        height: 20rem;
+        top: 40%;
+    }
+    #open_uppgrade_button{
+        margin: 0;
+        padding: 0;
+        left: 0;
+        top: 0;
+
+        width: 5rem; height: 5rem;
+        background-color: white;
+    }
 }

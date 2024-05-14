@@ -20,15 +20,20 @@ let window_backgrnd = document.getElementById("window_background");
 let upgrades_menu = document.getElementById("upgrades_tab");
 var windows_collected = 0;
 
+/* Här ska window knappen centreras in till backgrunden för window*/
 function window_bttn_repos(){
+    window_icon = document.getElementById("window_button");
     let w_icon_prop = window_icon.getBoundingClientRect();
     let w_backgrnd_prop = window_backgrnd.getBoundingClientRect();
-
     let offset_x = 0
     let offset_y = 0
 
     offset_x = (w_backgrnd_prop.left + (w_backgrnd_prop.width/2));
     offset_y = (w_backgrnd_prop.top + (w_backgrnd_prop.height/2));
+
+    w_icon_prop = window_icon.getBoundingClientRect();
+    offset_x += (w_icon_prop.left - (w_icon_prop.width/2));
+    offset_y += (w_icon_prop.top - (w_icon_prop.height/2));
 
     window_icon.style.left = offset_x+"px";
     window_icon.style.top = offset_y+"px";
@@ -66,18 +71,19 @@ function open_uppgrade_menu(){
 
     isUpgradeMenuOpen = !isUpgradeMenuOpen;
 
-
-    if (isUpgradeMenuOpen){
-        upgrades_menu.style.transform = "translateX(-90%) translateY(-50%)";
-        upgrades_menu.style.height = "90%";
-        document.getElementById("uppgrade_scrollable_menu").style.display = "block";       
-        document.getElementById("open_uppgrade_button").style.transform = "translateY(-50%) rotate(180deg)";
-    }
-    else{
-        upgrades_menu.style.transform = "translateX(0%) translateY(-50%)";
-        upgrades_menu.style.height = "15rem";
-        document.getElementById("uppgrade_scrollable_menu").style.display = "none";   
-        document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg) translateY(-50%)";
+    if (window.innerWidth > 600){
+        if (isUpgradeMenuOpen){
+            upgrades_menu.style.transform = "translateX(-90%) translateY(-50%)";
+            upgrades_menu.style.height = "90%";
+            document.getElementById("uppgrade_scrollable_menu").style.display = "block";       
+            document.getElementById("open_uppgrade_button").style.transform = "translateY(-50%) rotate(180deg)";
+        }
+        else{
+            upgrades_menu.style.transform = "translateX(0%) translateY(-50%)";
+            upgrades_menu.style.height = "15rem";
+            document.getElementById("uppgrade_scrollable_menu").style.display = "none";   
+            document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg) translateY(-50%)";
+        }
     }
 }
 
@@ -103,8 +109,5 @@ function auto_click_upgrade(obj, text){
 
 window.addEventListener("load",function(e){
     window_bttn_repos();
-})
-
-window.addEventListener("resize", function(e){
-    window_bttn_repos();
+    document.getElementById("uppgrade_scrollable_menu").style.display = "none";
 })
