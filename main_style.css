@@ -380,7 +380,7 @@ body{
     width: 400px;
     border-radius: 10px;
     background-color:#1F2633;
-
+    transform: rotate(45deg);
 }
 
 .slider::-webkit-slider-thumb{
@@ -389,6 +389,7 @@ body{
     height: 1.5rem;
     background-color:#F4F1E9;
     border-radius: 10px;
+    transform: rotate(45deg);
 }
 
 .slider::-moz-range-thumb {
@@ -397,12 +398,13 @@ body{
     background-color:#F4F1E9;
     border: none;
     cursor: pointer; 
+    transform: rotate(45deg);
 }
 
 .slider::-moz-range-progress{
     background-color:#F4F1E9;
     height: 100%;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px;
 }
 
 /* Mobile styles */

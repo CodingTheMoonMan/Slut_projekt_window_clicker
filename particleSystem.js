@@ -66,6 +66,8 @@ class Rectangle{
 
             this.xPos += this.dx
             this.yPos += this.dy
+
+            if(this.size > 0.2){ this.size -=0.2}
       }
 }
 
@@ -76,8 +78,8 @@ function explosionEffect(){
       for (let i = 0; i < 20; i++){
             let randomColor = colors[Math.floor(Math.random() * colors.length)] 
             let size = Math.random() * 20 + 5;
-            let speedX = Math.random() * 3 - 1.5;
-            let speedY = Math.random() * 3 - 1.5;
+            let speedX = Math.random() * 10 - 5;
+            let speedY = Math.random() * 10 - 5;
             let rects  = new Rectangle(ctx, mouse.x, mouse.y, randomColor, size, speedX, speedY);
             particles.push(rects);
       }
@@ -92,6 +94,10 @@ function animation(){
       ctx.clearRect(0,0,canvas.width,canvas.height);
       for(let i = 0; i < particles.length; i++){
             particles[i].update(false);
+            if (particles[i].size <= 0.3){
+                  particles.splice(i,1);
+                  i--;
+            }
       }
 }
 
