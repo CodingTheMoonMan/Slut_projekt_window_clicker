@@ -8,7 +8,7 @@
 </head>
 <body>
     <canvas id="particlesCanvas"></canvas>
-    <audio id="select_sound" src="sounds/sound.wav"></audio>
+    <audio id="select_sound" src="sounds/clickselect.wav"></audio>
     <div id="background_container">
         <div id="stripe_background"></div>
         <div id="background_gradient"></div>
@@ -33,14 +33,14 @@
             <div id="upgrades_tab">
                 <h1>Uppgrades</h1>
                 <div id="uppgrade_scrollable_menu">
-                    <button class="uppgrade_button" id="mouse_upgrade" onmouseenter="hover_on_sound('select_sound')" onclick="uppgrade_mouse_click()">1.4x Mouse Click | 50 | windows</button>
-                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')"> +1 Croatian Farmer | 100 | windows </button>
-                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')"> +1 Croatian Farming Tools | 400 | windows</button>
-                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 800 | windows</button>
-                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
-                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
-                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
-                    <button class="uppgrade_button" onmouseenter="hover_on_sound('select_sound')">+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" id="mouse_upgrade" onclick="uppgrade_mouse_click()">1.4x Mouse Click | 50 | windows</button>
+                    <button class="uppgrade_button" >+1 Croatian Farmer | 100 | windows </button>
+                    <button class="uppgrade_button" >+1 Croatian Farming Tools | 400 | windows</button>
+                    <button class="uppgrade_button" >+1 Croatian Tractor | 800 | windows</button>
+                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
                 </div>
                 <button id="open_uppgrade_button" onclick="open_uppgrade_menu()"></button>
             </div>
@@ -50,6 +50,7 @@
             <button id="main_menu_button" class="main_menu_button" onclick="open_main_menu()">
                 <img src="HomeIcon.svg">
             </button>
+            <button id="upgrade_button_phone" onclick="open_uppgrade_menu()"></button>
         </div>
 
         <div id="window_background">

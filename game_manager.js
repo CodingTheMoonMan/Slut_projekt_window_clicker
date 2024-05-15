@@ -19,6 +19,10 @@ let window_icon = document.getElementById("window_button");
 let window_backgrnd = document.getElementById("window_background");
 let upgrades_menu = document.getElementById("upgrades_tab");
 var windows_collected = 0;
+let select_audio = document.getElementById("select_sound");
+let upgrade_bttns = document.getElementsByClassName("uppgrade_button");
+
+select_audio.volume = 0.2;
 
 /* Här ska window knappen centreras in till backgrunden för window*/
 function window_bttn_repos(){
@@ -69,13 +73,15 @@ var current_margin = 0;
 
 function open_uppgrade_menu(){
 
+    let scorll_menu = document.getElementById("uppgrade_scrollable_menu");
+
     isUpgradeMenuOpen = !isUpgradeMenuOpen;
 
-    if (window.innerWidth > 600){
+    if (window.innerWidth > 900){
         if (isUpgradeMenuOpen){
             upgrades_menu.style.transform = "translateX(-90%) translateY(-50%)";
             upgrades_menu.style.height = "90%";
-            document.getElementById("uppgrade_scrollable_menu").style.display = "block";       
+            scorll_menu.style.display = "block";       
             document.getElementById("open_uppgrade_button").style.transform = "translateY(-50%) rotate(180deg)";
         }
         else{
@@ -83,6 +89,18 @@ function open_uppgrade_menu(){
             upgrades_menu.style.height = "15rem";
             document.getElementById("uppgrade_scrollable_menu").style.display = "none";   
             document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg) translateY(-50%)";
+        }
+    }
+    else{
+        if(isUpgradeMenuOpen){
+            upgrades_menu.style.display = "block";
+            scorll_menu.style.display = "block";
+            document.getElementById("upgrade_button_phone").style.backgroundColor = "#F4F1E9";
+        }
+        else{
+            upgrades_menu.style.display = "none";
+            scorll_menu.style.display  = "none";
+            document.getElementById("upgrade_button_phone").style.backgroundColor = "#8941c5";
         }
     }
 }
@@ -98,16 +116,25 @@ function uppgrade_mouse_click(){
     }
 }
 
-function hover_on_sound(soundObj){
-    var sound = document.getElementById(soundObj);
-    sound.play();
-}
-
 function auto_click_upgrade(obj, text){
 
 }
 
 window.addEventListener("load",function(e){
     window_bttn_repos();
+    document.getElementById("upgrades_tab").style.display = "none"
     document.getElementById("uppgrade_scrollable_menu").style.display = "none";
 })
+
+if (upgrade_bttns){
+    for(let i = 0; i < upgrade_bttns.length;i++){
+        upgrade_bttns[i].addEventListener("mouseover", function(e){
+            select_audio.play();
+        })
+        upgrade_bttns[i].addEventListener("mouseleave", function(e){
+            select_audio.pause();
+            select_audio.currentTime = 0;
+        })
+    }
+}
+
