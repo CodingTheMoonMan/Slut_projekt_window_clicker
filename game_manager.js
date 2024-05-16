@@ -91,7 +91,7 @@ function open_uppgrade_menu(){
             document.getElementById("open_uppgrade_button").style.transform = "rotate(0deg) translateY(-50%)";
         }
     }
-    else{
+    else if (window.innerWidth < 900){
         if(isUpgradeMenuOpen){
             upgrades_menu.style.display = "block";
             scorll_menu.style.display = "block";
@@ -122,7 +122,7 @@ function auto_click_upgrade(obj, text){
 
 window.addEventListener("load",function(e){
     window_bttn_repos();
-    document.getElementById("upgrades_tab").style.display = "none"
+    if (window.innerWidth < 900) document.getElementById("upgrades_tab").style.display = "none";
     document.getElementById("uppgrade_scrollable_menu").style.display = "none";
 })
 

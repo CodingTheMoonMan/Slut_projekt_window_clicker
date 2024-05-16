@@ -146,7 +146,7 @@ body{
 }
 
 #upgrades_tab h1{
-    color:#16234C;
+    color:#e6d8f2;
     font-family: 'Fira Sans Bold';
     font-size: 30px;
     text-align: center;
@@ -264,6 +264,10 @@ body{
 
 .main_menu_button img{
     width: 4rem;
+}
+
+#homeicon{
+    filter:brightness(0);
 }
 
 /* Den här är stylen för att visa hur många fönster du har samlat på */
@@ -384,7 +388,7 @@ body{
 .slider{
     -webkit-appearance: none;
     width: 400px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color:#1F2633;
     transform: rotate(45deg);
 }
@@ -394,7 +398,7 @@ body{
     width: 1.5rem;
     height: 1.5rem;
     background-color:#F4F1E9;
-    border-radius: 10px;
+    border-radius: 5px;
     transform: rotate(45deg);
 }
 
@@ -404,6 +408,7 @@ body{
     background-color:#F4F1E9;
     border: none;
     cursor: pointer; 
+    border-radius: 5px;
     transform: rotate(45deg);
 }
 
@@ -415,7 +420,7 @@ body{
 
 /* Mobile styles */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     body{
         overflow-x: hidden;
     }
@@ -454,4 +459,5 @@ body{
         border-radius: 5px;
         z-index: 9;
     }
+    
 }
