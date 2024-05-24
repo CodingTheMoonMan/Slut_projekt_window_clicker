@@ -17,14 +17,14 @@
     <div class="main_menu" id="main_menu">
         <div id="background_effect"></div>
         <div id="button_container">
-            <button><h3>Language</h3></button>
             <div id="volume_options">
                 <h3>Volume</h3>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <input type="range" min="0" max="2" value="0.1" step="0.01" class="slider" id="myRange">
             </div>
             <button><h3>Music</h3></button>
             <button><h3>Sound Effects</h3></button>
             <button><h3>About</h3></button>
+            <button><h3> * Menu WIP * </h3></button>
         </div>
     </div>
     
@@ -33,14 +33,14 @@
             <div id="upgrades_tab">
                 <h1>Uppgrades</h1>
                 <div id="uppgrade_scrollable_menu">
-                    <button class="uppgrade_button" id="mouse_upgrade" onclick="uppgrade_mouse_click()">1.4x Mouse Click | 50 | windows</button>
-                    <button class="uppgrade_button" >+1 Croatian Farmer | 100 | windows </button>
-                    <button class="uppgrade_button" >+1 Croatian Farming Tools | 400 | windows</button>
-                    <button class="uppgrade_button" >+1 Croatian Tractor | 800 | windows</button>
-                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
-                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
-                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
-                    <button class="uppgrade_button" >+1 Croatian Tractor | 400 | windows</button>
+                    <button class="uppgrade_button" onclick="uppgrade_mouse_click()"><h3>1.4x Mouse Click</h3><var id="mouse_upgrade">50 Windows</var></button>
+                    <button class="uppgrade_button" onclick="increasse_passive_income('upgrade01', 1, 100)" ><h3>Croatian Farmer</h3> <var id="upgrade01">100 Windows </var></button>
+                    <button class="uppgrade_button" onclick="increasse_passive_income('upgrade02', 5, 200)"><h3>Croatian Farming Tools</h3><var id="upgrade02"> 400 Windows </var></button>
+                    <button class="uppgrade_button" onclick="increasse_passive_income('upgrade03', 10, 300)"><h3>Croatian Tractor</h3><var id="upgrade03">800 Windows</var></button>
+                    <button class="uppgrade_button" ><h3>Croatian Farming Company</h3><var id="upgrade04">1200 Windows</var></button>
+                    <button class="uppgrade_button" ><h3>Test01</h3><var id="upgrade05">1600 Windows</var></button>
+                    <button class="uppgrade_button" ><h3>Test02</h3><var id="upgrade06">2000 Windows</var></button>
+                    <button class="uppgrade_button" ><h3>Test03</h3><var id="upgrade07">2400 Windows</var></button>
                 </div>
                 <button id="open_uppgrade_button" onclick="open_uppgrade_menu()"></button>
             </div>
@@ -61,4 +61,5 @@
 </body>
 <script src="game_manager.js"></script>
 <script src="particleSystem.js"></script>
+<script src="scripts/upgrades_manager.js"></script>
 </html>

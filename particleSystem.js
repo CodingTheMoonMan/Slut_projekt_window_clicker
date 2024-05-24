@@ -49,7 +49,8 @@ class Rectangle{
       draw(){
             this.#ctx.beginPath();
             this.#ctx.fillStyle = this.color;
-            this.#ctx.fillRect(this.xPos - (this.size/2) , this.yPos - (this.size/2), this.size, this.size);
+            this.#ctx.arc(this.xPos - (this.size/2) , this.yPos - (this.size/2), this.size, 0, 2 * Math.PI);
+            this.#ctx.fill();
             this.#ctx.closePath();
       }
       

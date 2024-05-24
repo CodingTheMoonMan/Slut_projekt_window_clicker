@@ -14,15 +14,17 @@ let x = 0;
 let x2 = 5846 - 442;
 let window_add_amount = 1
 
+let total_windows = 0;
+
 // ------------------------------------------------------------------------------- //
 let window_icon = document.getElementById("window_button");
 let window_backgrnd = document.getElementById("window_background");
 let upgrades_menu = document.getElementById("upgrades_tab");
-var windows_collected = 0;
 let select_audio = document.getElementById("select_sound");
 let upgrade_bttns = document.getElementsByClassName("uppgrade_button");
+let audio_slider = document.getElementById("myRange");
 
-select_audio.volume = 0.2;
+select_audio.volume = 0.1;
 
 /* Här ska window knappen centreras in till backgrunden för window*/
 function window_bttn_repos(){
@@ -49,8 +51,8 @@ function window_counter_update(amount){
 
 // Counter for the total windows collected
 function add_windows(){
-    windows_collected += window_add_amount;
-    window_counter_update(windows_collected);
+    total_windows += window_add_amount;
+    window_counter_update(total_windows);
     
 };
 
@@ -106,18 +108,14 @@ function open_uppgrade_menu(){
 }
 
 function uppgrade_mouse_click(){
-    mouse_price = document.getElementById("mouse_upgrade").innerText.split("|")[1];
-    if (windows_collected >= parseInt(mouse_price)){
+    mouse_price = document.getElementById("mouse_upgrade").innerText.replace("Windows","");
+    if (total_windows >= parseInt(mouse_price)){
         window_add_amount = window_add_amount * 1.4
-        windows_collected -= parseInt(mouse_price)
-        window_counter_update(windows_collected)
+        total_windows -= parseInt(mouse_price)
+        window_counter_update(total_windows)
         mouse_price = parseInt(mouse_price * 1.5)
-        document.getElementById("mouse_upgrade").innerText = ("1.4x Mouse Click | " + String(mouse_price) + " | windows");
+        document.getElementById("mouse_upgrade").innerText = (mouse_price + " Windows");
     }
-}
-
-function auto_click_upgrade(obj, text){
-
 }
 
 window.addEventListener("load",function(e){
@@ -138,3 +136,7 @@ if (upgrade_bttns){
     }
 }
 
+audio_slider.addEventListener("input", function(){
+    audio_slider_value = audio_slider.value;
+    select_audio.volume = audio_slider_value;
+})
